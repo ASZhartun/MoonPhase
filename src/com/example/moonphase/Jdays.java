@@ -35,7 +35,7 @@ public class Jdays {
 	}
 
 	public Jdays(String s) {
-		set(s, false); // YMD
+		set(s, true); // DMY
 	}
 
 	public Jdays(int year, int month, int day) {
