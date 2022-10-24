@@ -1,5 +1,6 @@
 package com.example.moonphase;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -94,6 +95,7 @@ public class MainActivity extends Activity {
 	}
 
 	private ArrayList<HashMap<String, String>> getParamCalculations(String dateForm) {
+		SimpleDateFormat sdf = new SimpleDateFormat(DATE_PATTERN);
 		Jdays myDate = new Jdays();
 		myDate.set(dateForm, true);
 		double jd = myDate.get();
@@ -135,7 +137,4 @@ public class MainActivity extends Activity {
 		results.add(newMoonEnd);
 		return results;
 	}
-
-
-
 }
