@@ -8,6 +8,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -20,6 +22,8 @@ public class MainActivity extends Activity {
 	
 	ListView moonParams;
 	ListView moonPhases;
+	
+	Button runBtn;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,7 @@ public class MainActivity extends Activity {
 		zoneField = (EditText) findViewById(R.id.zoneField);
 		moonParams = (ListView) findViewById(R.id.moonParams);
 		moonPhases = (ListView) findViewById(R.id.moonPhases);
+		runBtn = (Button) findViewById(R.id.runBtn);
 		
 		Date curr = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat(DATE_PATTERN);
@@ -38,7 +43,14 @@ public class MainActivity extends Activity {
 		int hoursGMT = TimeZone.getTimeZone("Europe/Minsk").getRawOffset() / 3600000;
 		zoneField.setText("GMT: " + Integer.toString(hoursGMT));
 		
-		
+		runBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				
+			}
+		});
 	}
 
 }
